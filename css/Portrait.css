@@ -1,0 +1,49 @@
+
+
+@media all and (orientation:portrait){
+
+
+body {
+	background-image: url(images/background.png);
+}
+
+.paper {
+	width:80vw;
+	min-width:500px;
+	height:50vh;
+}
+
+.content {
+	width:80vw;
+	min-width:500px;
+	margin:auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

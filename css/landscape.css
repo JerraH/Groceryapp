@@ -1,0 +1,130 @@
+
+
+@media all and (orientation:landscape){
+
+
+body {
+	background-image: url(images/background-for-web-app.png);
+	margin:0;
+	padding:0;
+	background-size:cover;
+}
+
+.paper {
+	height:70vh;
+	width:50vw;
+	max-width:800px;
+	margin-top:5%;
+	margin-left: auto;
+	margin-right:auto;
+	background-image: url(images/landscape/paper.png);
+	background-repeat:no-repeat;
+	background-size:100% auto;
+	position: relative;
+	z-index:10;
+}
+
+.content {
+	width:50vw;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0;
+	max-width:800px;
+	min-width:400px;
+}
+
+
+
+.list {
+	width:85%;
+	position:absolute;
+	margin-left:3%;
+	margin-top:5%;
+	font-size:1.7em;
+	font-family:'Architects Daughter', cursive;
+}
+
+.centershape {
+	background-image: url(images/centershape.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  width: 20%;
+  max-width: 600px;
+  min-width: 400px;
+  height: 16vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shopping {
+	background-image: url(images/shopping.png);
+	background-size:100% auto;
+	width:7vw;
+	height:7vw;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	top:13%;
+}
+
+.listitem {
+	border-bottom: solid 2px #fff2b6;
+	height:2vw;
+	display:block;
+}
+
+.titlepaper {
+	background-image: url(images/landscape/titlepaper.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	width:50%;
+	height:30%;
+	position:absolute;
+	left:32%;
+	z-index:9;
+}
+
+.backtab {
+	background-image: url(images/landscape/backtab.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	width:15%;
+	height:10vw;
+	margin-top:2%;
+	position:absolute;
+	left:50%;
+	z-index:8;
+}
+
+.checkmark {
+	position:absolute;
+}
+
+.approve, .nope, .rearrange {
+	position:relative;
+	float:right;
+	margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
