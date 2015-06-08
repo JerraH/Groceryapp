@@ -54,6 +54,8 @@ body {
   height: 16vw;
   margin-left: auto;
   margin-right: auto;
+  font-family:'atlandsketches', cursive;
+  font-size:2em;
 }
 
 .shopping {
