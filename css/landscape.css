@@ -37,11 +37,13 @@ body {
 
 .list {
 	width:85%;
+	height:70%;
 	position:absolute;
 	margin-left:3%;
 	margin-top:5%;
 	font-size:1.7em;
 	font-family:'Architects Daughter', cursive;
+	overflow:auto;
 }
 
 .centershape {
@@ -71,7 +73,7 @@ body {
 
 .listitem {
 	border-bottom: solid 2px #fff2b6;
-	height:2vw;
+	height:4vh;
 	display:block;
 }
 
@@ -100,16 +102,32 @@ body {
 
 .checkmark {
 	position:absolute;
+	display:none;
 }
 
 .approve, .nope, .rearrange {
 	position:relative;
 	float:right;
 	margin-left: 10px;
+	display:none;
 }
 
+.listinput {
+	height:4vh;
+	width:50%;
+	display:inline;
+	position:relative;
+	padding:0;
+	margin:0;
+}
 
-
+form {
+	display:inline;
+	padding:0;
+	margin:0;
+	height:4vh;
+	width:50%;
+}
 
 
 
