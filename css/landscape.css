@@ -4,7 +4,7 @@
 
 
 body {
-	background-image: url(images/background-for-web-app.png);
+	background-image: url(../images/background-for-web-app.png);
 	margin:0;
 	padding:0;
 	background-size:cover;
@@ -17,7 +17,7 @@ body {
 	margin-top:5%;
 	margin-left: auto;
 	margin-right:auto;
-	background-image: url(images/landscape/paper.png);
+	background-image: url(../images/landscape/paper.png);
 	background-repeat:no-repeat;
 	background-size:100% auto;
 	position: relative;
@@ -45,7 +45,7 @@ body {
 }
 
 .centershape {
-	background-image: url(images/centershape.png);
+	background-image: url(../images/centershape.png);
   background-size: 100% auto;
   background-repeat: no-repeat;
   width: 20%;
@@ -57,7 +57,7 @@ body {
 }
 
 .shopping {
-	background-image: url(images/shopping.png);
+	background-image: url(../images/shopping.png);
 	background-size:100% auto;
 	width:7vw;
 	height:7vw;
@@ -74,7 +74,7 @@ body {
 }
 
 .titlepaper {
-	background-image: url(images/landscape/titlepaper.png);
+	background-image: url(../images/landscape/titlepaper.png);
 	background-size:contain;
 	background-repeat:no-repeat;
 	width:50%;
@@ -85,7 +85,7 @@ body {
 }
 
 .backtab {
-	background-image: url(images/landscape/backtab.png);
+	background-image: url(../images/landscape/backtab.png);
 	background-size:contain;
 	background-repeat:no-repeat;
 	width:15%;
