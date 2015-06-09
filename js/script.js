@@ -9,14 +9,38 @@ create new <li class="listitem">
 			</li>
 */
 $(function() {
-		if ($('.listinput').css({'display': 'none'})) {
-		$('.newlistitem').click(function() {
-			$('.listinput').css({'display': 'inline'}) 
-		})}
-		else {
-			$('.newlistitem').click(function() {
-				$('#textbox').prepend('<p>test</p>')
-		})};
+	var list = JSON.parse(localStorage.getItem('list-items')) || [];
+	for (var index = 0; index < list.length; index++) {
+		$('#textbox').before('<li class="listitem">'+list[index]+'</li>');
+	}
+	
+	$('.newlistitem').click(function() {
+		$('.newlistitem').css({'display': 'none'});
+		$('.listinput').css({'display': 'inline'});
+		$('.submititem').css({'display': 'inline'});
+	});
+	
+	
+	$('.groceryinput').submit(function(event){
+		event.preventDefault();
+		var thing = $('.listinput').val();
+		
+		// Create a new list item
+		$('#textbox').before('<li class="listitem">' + thing + '</li> ');
+		list.push(thing);
+		localStorage.setItem('list-items', JSON.stringify(list));
+		console.log('Submitted the item: ' + thing);
+	});
+	
+	
+		// if ($('.listinput').css({'display': 'none'})) {
+		// $('.newlistitem').click(function() {
+		// 	$('.listinput').css({'display': 'inline'}) 
+		// })}
+		// else {
+		// 	$('.newlistitem').click(function() {
+		// 		$('#textbox').prepend('<p>test</p>')
+		// })};
   		/*$('.listinput').css('display': 'inline');
 })}
 		else {
