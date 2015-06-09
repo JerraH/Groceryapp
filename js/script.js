@@ -8,24 +8,23 @@ create new <li class="listitem">
 				<img class="rearrange" src="images/updown.png" alt="move">
 			</li>
 */
-
 $(function() {
-	$('.listinput').click(function() {
-		this.closest(".approve").show()
-	})
+		if ($('.listinput').css({'display': 'none'})) {
+		$('.newlistitem').click(function() {
+			$('.listinput').css({'display': 'inline'}) 
+		})}
+		else {
+			$('.newlistitem').click(function() {
+				$('#textbox').prepend('<p>test</p>')
+		})};
+  		/*$('.listinput').css('display': 'inline');
+})}
+		else {
+			$('#textbox').prepend('<li class="listitem">:input</li> ');*/
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-})
+});
