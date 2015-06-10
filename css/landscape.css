@@ -12,17 +12,18 @@ body {
 }
 
 .paper {
-	height:70vh;
-	width:50vw;
-	max-width:800px;
-	margin-top:5%;
-	margin-left: auto;
-	margin-right:auto;
-	background-image: url('../images/landscape/paper.png');
-	background-repeat:no-repeat;
-	background-size:100% auto;
-	position: relative;
-	z-index:10;
+height: 50vh;
+  width: 50vw;
+  max-width: 800px;
+  max-height: 600px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('../images/landscape/paper.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  z-index: 10;
 }
 
 .content {
@@ -42,9 +43,10 @@ body {
 	position:absolute;
 	margin-left:3%;
 	margin-top:5%;
-	font-size:1.7em;
+	font-size:4vh;
 	font-family:'Architects Daughter', cursive;
 	overflow:auto;
+	z-index:16;
 }
 
 .centershape {
@@ -102,13 +104,14 @@ body {
 	border-bottom: solid 2px #fff2b6;
 	height:5vh;
 	display:block;
+	box-sizing: border-box;
 }
 
 .titlepaper {
 	background-image: url('../images/landscape/titlepaper.png');
 	background-size:contain;
 	background-repeat:no-repeat;
-	width:50%;
+	width:25%;
 	height:15vw;
 	position:absolute;
 	left:32%;
@@ -125,14 +128,14 @@ body {
 	position:absolute;
 	left:50%;
 	z-index:8;
+	box-sizing: border-box;
 }
 
 .checkmark {
 	position:absolute;
 	float:left;
 	display:none;
-	height:4vh;
-	z-index:14;
+	height:3.6vh;
 }
 
 .nope, .rearrange {
@@ -141,7 +144,9 @@ body {
 	margin-left: 10px;
 	display:none;
 	height:3vh;
+	width:3vh;
 	background-size:contain;
+	margin-bottom:-2vh;
 }
 
 .nope {
@@ -169,6 +174,7 @@ form {
 	margin:0;
 	height:3vh;
 	width:50%;
+	float:bottom;
 }
 
 
@@ -192,25 +198,41 @@ form {
 }
 
 .editicon {
-	background-image: url('../images/newlist.png');
-	height:50px;
-	width:50px;
-	position:relative;
-	background-size:100% auto;
+	  height: 6vh;
+  width: 6vh;
+  position: absolute;
+  z-index: 15;
+  right:1rem;
+  top:1rem;
 }
 
 .checkbox {
-	position:relative;
 	display:inline;
-	height:4vh;
+	height:3.5vh;
 	width:auto;
 }
 
 .iteminputted {
 	display:inline;
+	position:relative;
 }
 
+.toprcorner, .bottomlcorner {
+	height:50%;
+	width:auto;
+	position:absolute;
+	z-index:10;
+}
 
+.toprcorner {
+	right:1rem;
+	top:.5rem;
+}
+
+.bottomlcorner {
+	left:1rem;
+	bottom:1rem;
+}
 
 
 
