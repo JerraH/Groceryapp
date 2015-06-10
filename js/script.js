@@ -80,17 +80,24 @@ $(function() {
 	});
 
 	/*move item up */
-
+	
 	$('.arrowup').click(function(e) {
-		var detachable = $(e.target).parent('li');
-		var movedItem = '<li class="listitem">' + detachable.html() + '</li>';
-		if (detachable.prev('li').val() == undefined) {	
-			return;
-		}
-		else {
-			detachable.prev('li').before(movedItem);
+		var detachable = $(e.target).closest('li');
+		var previous = detachable.prev('li');
+		if(previous.length > 0){
 			detachable.detach();
-		};
+			previous.before(detachable);
+		}
+		
+		// var detachable = $(e.target).parent('li');
+		// var movedItem = '<li class="listitem">' + detachable.html() + '</li>';
+		// if (detachable.prev('li').val() == undefined) {	
+		// 	return;
+		// }
+		// else {
+		// 	detachable.prev('li').before(movedItem);
+		// 	detachable.detach();
+		// };
 	});
 
 	$('.arrowdown').click(function(e){
