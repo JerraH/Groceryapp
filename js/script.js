@@ -12,7 +12,14 @@ $(function() {
 	var thing = $('.listinput').val();
 	var list = JSON.parse(localStorage.getItem('list-items')) || [];
 	for (var index = 0; index < list.length; index++) {
-		$('#textbox').before('<li class="listitem">' + '<img class="checkmark" src="images/checkmark.png">' + '<img class="checkbox" src="images/checkbox.png">' + ' ' + '<div class="iteminputted">' + list[index] + '</div>' + '<div class="nope">' + '</div>' + '<div class="rearrange">' + '</div>' + '</li>');
+		$('#textbox').before(
+			'<li class="listitem">' + '<img class="checkmark" src="images/checkmark.png">' + 
+				'<img class="checkbox" src="images/checkbox.png">' + ' ' + 
+				'<div class="iteminputted">' + list[index] + '</div>' + 
+				'<div class="nope">' + '</div>' + 
+				'<div class="arrowdown">' + '</div>' + 
+				'<div class="arrowup">' + '</div>' +
+			'</li>');
 	};
 	
 	$('.newlistitem').click(function() {
@@ -30,7 +37,14 @@ $(function() {
 			return;
 		}
 		else {
-			$('#textbox').before('<li class="listitem">' + '<img class="checkmark" src="images/checkmark.png">' + '<img class="checkbox" src="images/checkbox.png">' + ' ' + '<div class="iteminputted">' + thing + '</div>' + '<div class="nope">' + '</div>' + '<div class="rearrange">' + '</div>' + '</li>');
+			$('#textbox').before(
+				'<li class="listitem">' + '<img class="checkmark" src="images/checkmark.png">' + 
+				'<img class="checkbox" src="images/checkbox.png">' + ' ' + 
+				'<div class="iteminputted">' + thing + '</div>' + 
+				'<div class="nope">' + '</div>' + 
+				'<div class="arrowdown">' + '</div>' + 
+				'<div class="arrowup">' + '</div>' +
+			'</li>');
 			list.push(thing);
 			localStorage.setItem('list-items', JSON.stringify(list));
 			console.log('Submitted the item: ' + thing);
@@ -47,35 +61,54 @@ $(function() {
 		$(this).closest('li').find('.iteminputted').css({'text-decoration': 'none'});
 	})
 
-
+/*turn on edit buttons */
 	
 	$('.editicon').click(function() {
 			$('.nope').css({'display': 'inline'});
-			$('.rearrange').css({'display': 'inline'});
+			$('.arrowup').css({'display': 'inline'});
+			$('.arrowdown').css({'display': 'inline'});
+			$('.listitem').attr( 'contentEditable', 'true' );
+			console.log($('.listitem').html());
 	});
+
+/*turn off edit buttons */
+
+	/*delete*/
 
 	$('.nope').click(function(e) {
 		$(e.target).closest('li').remove();
-	})
+	});
 
-	$('.rearrange').click(function(e) {
-		var detachable = $(e.target).closest('li');
-		detachable.closest('li').before(detachable);
-		detachable.detach();
-	})
+	/*move item up */
 
-		// if ($('.listinput').css({'display': 'none'})) {
-		// $('.newlistitem').click(function() {
-		// 	$('.listinput').css({'display': 'inline'}) 
-		// })}
-		// else {
-		// 	$('.newlistitem').click(function() {
-		// 		$('#textbox').prepend('<p>test</p>')
-		// })};
-  		/*$('.listinput').css('display': 'inline');
-})}
+	$('.arrowup').click(function(e) {
+		var detachable = $(e.target).parent('li');
+		var movedItem = '<li class="listitem">' + detachable.html() + '</li>';
+		if (detachable.prev('li').val() == undefined) {	
+			return;
+		}
 		else {
-			$('#textbox').prepend('<li class="listitem">:input</li> ');*/
+			detachable.prev('li').before(movedItem);
+			detachable.detach();
+		};
+	});
+
+	$('.arrowdown').click(function(e){
+		var detachable = $(e.target).parent('li');
+		var movedItem = '<li class="listitem">' + detachable.html() + '</li>';
+		if (detachable.next('li').has('.groceryinput')) {
+			detachable.next('li').after(movedItem);
+			detachable.detach();
+			return;
+		}
+		else {
+			return;
+		};
+
+	});
+
+	
+
 
 
 
