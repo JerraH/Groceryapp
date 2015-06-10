@@ -82,13 +82,12 @@ $(function() {
 	/*move item up */
 
 	$('.arrowup').click(function(e) {
-		var detachable = $(e.target).parent('li');
-		var movedItem = '<li class="listitem">' + detachable.html() + '</li>';
+		var detachable = $(e.target).closest('li');
 		if (detachable.prev('li').val() == undefined) {	
 			return;
 		}
 		else {
-			detachable.prev('li').before(movedItem);
+			detachable.prev('li').before(detachable);
 			detachable.detach();
 		};
 	});
@@ -97,11 +96,11 @@ $(function() {
 		var detachable = $(e.target).parent('li');
 		var movedItem = '<li class="listitem">' + detachable.html() + '</li>';
 		if (detachable.next('li').has('.groceryinput')) {
-			detachable.next('li').after(movedItem);
-			detachable.detach();
 			return;
 		}
 		else {
+			detachable.next('li').after(movedItem);
+			detachable.detach();
 			return;
 		};
 
