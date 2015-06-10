@@ -100,7 +100,7 @@ body {
 
 .listitem {
 	border-bottom: solid 2px #fff2b6;
-	height:4vh;
+	height:5vh;
 	display:block;
 }
 
@@ -129,24 +129,33 @@ body {
 
 .checkmark {
 	position:absolute;
+	float:left;
 	display:none;
+	height:4vh;
+	z-index:14;
 }
 
-.approve, .nope, .rearrange {
+.nope, .rearrange {
 	position:relative;
 	float:right;
 	margin-left: 10px;
 	display:none;
+	height:3vh;
+	background-size:contain;
 }
-.newlistitem {
-	position:relative;
-	float:right;
-	margin-left: 10px;
-	display: inline;
+
+.nope {
+	background-image: url('../images/xout.png');
 }
+
+.rearrange {
+	background-image: url('../images/updown.png');
+}
+
+
 
 .listinput {
-	height:4vh;
+	height:3vh;
 	width:50%;
 	position:relative;
 	padding:0;
@@ -158,22 +167,18 @@ form {
 	display:inline;
 	padding:0;
 	margin:0;
-	height:4vh;
+	height:3vh;
 	width:50%;
 }
 
-.submitcheckmark {
-	background-image: url(../images/checkmark.png);
-}
 
 .newlistitem, .submititem {
-	background-image: url(../images/newlistitem.png);
+	background-image: url('../images/newlistitem.png');
 	border:0;
 	height: 4vh;
   	width: 4vh;
   	background-repeat: no-repeat;
   	background-size: cover;
-  	background-color: transparent;
   	cursor: default;
 	position:relative;
 	float:right;
@@ -182,7 +187,27 @@ form {
 }
 
 .submititem {
+	background-color:transparent;
 	display: none;
+}
+
+.editicon {
+	background-image: url('../images/newlist.png');
+	height:50px;
+	width:50px;
+	position:relative;
+	background-size:100% auto;
+}
+
+.checkbox {
+	position:relative;
+	display:inline;
+	height:4vh;
+	width:auto;
+}
+
+.iteminputted {
+	display:inline;
 }
 
 

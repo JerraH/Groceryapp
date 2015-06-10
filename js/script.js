@@ -9,10 +9,11 @@ create new <li class="listitem">
 			</li>
 */
 $(function() {
+	var thing = $('.listinput').val();
 	var list = JSON.parse(localStorage.getItem('list-items')) || [];
 	for (var index = 0; index < list.length; index++) {
-		$('#textbox').before('<li class="listitem">'+list[index]+'</li>');
-	}
+		$('#textbox').before('<li class="listitem">' + '<img class="checkmark" src="images/checkmark.png">' + '<img class="checkbox" src="images/checkbox.png">' + ' ' + '<div class="iteminputted">' + list[index] + '</div>' + '<div class="nope">' + '</div>' + '<div class="rearrange">' + '</div>' + '</li>');
+	};
 	
 	$('.newlistitem').click(function() {
 		$('.newlistitem').css({'display': 'none'});
@@ -24,15 +25,26 @@ $(function() {
 	$('.groceryinput').submit(function(event){
 		event.preventDefault();
 		var thing = $('.listinput').val();
-		
 		// Create a new list item
-		$('#textbox').before('<li class="listitem">' + thing + '</li> ');
-		list.push(thing);
-		localStorage.setItem('list-items', JSON.stringify(list));
-		console.log('Submitted the item: ' + thing);
+		if (thing=="") {
+			return;
+		}
+		else {
+			$('#textbox').before('<li class="listitem">' + '<img class="checkmark" src="images/checkmark.png">' + ' ' + '<div class="iteminputted">' + thing + '</div>' + '<div class="nope">' + '</div>' + '<div class="rearrange">' + '</div>' + '</li>');
+			list.push(thing);
+			localStorage.setItem('list-items', JSON.stringify(list));
+			console.log('Submitted the item: ' + thing);
+		}
 	});
 	
-	
+	$('.editicon').click(function() {
+			$('.nope').css({'display': 'inline'});
+			$('.rearrange').css({'display': 'inline'});
+	});
+
+	$('.checkbox').click(function() {
+		$(this).closest('li').find('.checkmark').css({'display': 'inline'});
+	});
 		// if ($('.listinput').css({'display': 'none'})) {
 		// $('.newlistitem').click(function() {
 		// 	$('.listinput').css({'display': 'inline'}) 
