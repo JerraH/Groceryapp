@@ -4,7 +4,7 @@
 
 
 body {
-	background-image: url('../images/background-for-web-app.png');
+	background-image: url(../images/background-for-web-app.png);
 	margin:0;
 	padding:0;
 	background-size:cover;
