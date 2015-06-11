@@ -147,7 +147,7 @@ height: 50vh;
 	width:3vh;
 	background-size:contain;
 	background-repeat:no-repeat;
-	margin-bottom:-2vh;
+	margin-top:1.8vh;
 }
 
 .nope {
@@ -167,12 +167,16 @@ height: 50vh;
 
 
 .listinput {
-	height:3vh;
+	height:4vh;
 	width:50%;
 	position:relative;
 	padding:0;
 	margin:0;
 	display:none;
+	background-color:#fff08a;
+	border: none;
+	font-family:'Architects Daughter', cursive;
+	font-size: 3.8vh;
 }
 
 form {
