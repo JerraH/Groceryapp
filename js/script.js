@@ -23,11 +23,14 @@ $(function() {
 			'</li>');
 	};
 	
+	var inputBoxShowing = false;
 	$('.newlistitem').click(function() {
 		$('.newlistitem').css({'display': 'none'});
 		$('.listinput').css({'display': 'inline'});
 		$('.submititem').css({'display': 'inline'});
+		inputBoxShowing = true;
 	});
+
 	
 	
 	$('.groceryinput').submit(function(event){
@@ -40,31 +43,31 @@ $(function() {
 		if (thing=="" ) {
 			return;
 		}
-		if (thingExists > -1) {
-				$('.listinput').val('');
-				alert("You already have this item on your list!");
-				console.log(thing);
-				return;
-			}
 		else {
-			$('#textbox').before(
-				'<li class="listitem">' + '<img class="checkmark" src="images/checkmark.png">' + 
-				'<img class="checkbox" src="images/checkbox.png">' + ' ' + 
-				'<div class="iteminputted">' + thing + '</div>' + 
-				'<div class="nope">' + '</div>' + 
-				'<div class="arrowdown">' + '</div>' + 
-				'<div class="arrowup">' + '</div>' +
-			'</li>');
-			list.push(thing);
-			localStorage.setItem('list-items', JSON.stringify(list));
-			$('.listinput').val('');
-			if (isVisible==true) {
-				$('.nope').css({'display': 'inline'});
-				$('.arrowup').css({'display': 'inline'});
-				$('.arrowdown').css({'display': 'inline'});
-				$('.iteminputted').attr( 'contentEditable', 'true' );
-			};
-		};
+			if (thingExists > -1) {
+					$('.listinput').val('');
+					alert("You already have this item on your list!");
+					return;
+				}
+			else {
+				$('#textbox').before(
+					'<li class="listitem">' + '<img class="checkmark" src="images/checkmark.png">' + 
+					'<img class="checkbox" src="images/checkbox.png">' + ' ' + 
+					'<div class="iteminputted">' + thing + '</div>' + 
+					'<div class="nope">' + '</div>' + 
+					'<div class="arrowdown">' + '</div>' + 
+					'<div class="arrowup">' + '</div>' +
+				'</li>');
+				list.push(thing);
+				localStorage.setItem('list-items', JSON.stringify(list));
+				$('.listinput').val('');
+				if (isVisible==true) {
+					$('.nope').css({'display': 'inline'});
+					$('.arrowup').css({'display': 'inline'});
+					$('.arrowdown').css({'display': 'inline'});
+					$('.iteminputted').attr( 'contentEditable', 'true' );
+				};
+		}};
 	});
 
 	$('.list').on('click', '.checkbox', function() {
